@@ -64,14 +64,14 @@ public class Notification {
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
+        if (!(o instanceof Notification)) return false;
         Notification that = (Notification) o;
-        return Objects.equals(id, that.id) && Objects.equals(chatId, that.chatId) && Objects.equals(text, that.text) && Objects.equals(execDate, that.execDate);
+        return Objects.equals(getId(), that.getId()) && Objects.equals(getChatId(), that.getChatId()) && Objects.equals(getText(), that.getText()) && Objects.equals(getExecDate(), that.getExecDate());
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, chatId, text, execDate);
+        return Objects.hash(getId(), getChatId(), getText(), getExecDate());
     }
 
     @Override
